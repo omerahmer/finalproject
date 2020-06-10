@@ -84,12 +84,20 @@ def search_results(request):
     city = city.lower()
     vehicles_list = []
     area = Area.objects.filter(city = city)
+    # name = Vehicles.objects.filter(car_name = car_name)
     for a in area:
         vehicles = Vehicles.objects.filter(area = a)
         for car in vehicles:
             if car.is_available == True:
                 vehicle_dictionary = {'name':car.car_name, 'color':car.color, 'id':car.id, 'pincode':car.area.pincode, 'capacity':car.capacity, 'description':car.description}
                 vehicles_list.append(vehicle_dictionary)
+    """ for n in name:
+        vehicles = Vehicles.objects.filter(car_name = n)
+        for car in vehicles:
+            if car.is_available == True:
+                vehicle_dictionary = {'name':car.car_name, 'color':car.color, 'id':car.id, 'pincode':car.area.pincode, 'capacity':car.capacity, 'description':car.description}
+                vehicles_list.append(vehicle_dictionary}
+    """
     request.session['vehicles_list'] = vehicles_list
     return render(request, 'customer/search_results.html')
 

@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Area(models.Model):
-    pincode = models.CharField(validators = [MinLengthValidator(6), MaxLengthValidator(6)],max_length = 6,unique=True)
+    pincode = models.CharField(validators = [MinLengthValidator(6), MaxLengthValidator(6)],max_length = 6)
     city = models.CharField(max_length = 20)
 
 class CarDealer(models.Model):

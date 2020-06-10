@@ -82,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ocrs_project',
-        'USER': 'hp',
-        'PASSWORD': 'hpp122334',
+        'USER': 'omer',
+        'PASSWORD': 'omer',
         'HOST': 'localhost',
         'PORT': '3306',
     }

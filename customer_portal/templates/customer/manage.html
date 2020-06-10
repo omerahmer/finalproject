@@ -11,12 +11,12 @@
 {% for order in od %}
 
   <tr>
-    <td>name : {{order.vehicle.car_name}}</td>
-    <td>days : {{order.days}}</td>
-    <td>rent : {{order.rent}}</td>
-    <td>capacity : {{order.vehicle.capacity}}</td>
-    <td>description : {{order.vehicle.description}}</td>
-    <td>pincode : {{order.vehicle.area.pincode}}</td>
+    <td>Name: {{order.vehicle.car_name}}</td>
+    <td>Days: {{order.days}}</td>
+    <td>Rent: {{order.rent}}</td>
+    <td>Passenger capacity: {{order.vehicle.capacity}}</td>
+    <td>Rental price: {{order.vehicle.description}}</td>
+    <td>Zip code: {{order.vehicle.area.pincode}}</td>
     <td><form action = "/customer_portal/delete/" method="post">
           {% csrf_token %}
           <input type="hidden" name="id" value="{{order.id}}">

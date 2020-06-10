@@ -3,7 +3,7 @@
 
 <div class="w3-bar w3-large w3-black">
   <div class="w3-bar-item w3-left w3-black">Customer Portal: {{user.username}}</div>
-  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">logout</a>
+  <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/logout/">Logout</a>
   <a class="w3-bar-item w3-btn w3-teal w3-right" href="/customer_portal/manage/">Manage</a>
   <a class="w3-ber-item w3-btn w3-teal w3-right" href="/customer_portal/search/">Search for cars</a>
 </div>
@@ -15,11 +15,11 @@
   {% for vehicle in request.session.vehicles_list %}
 
     <tr>
-      <td style="padding:20">vehicle : {{vehicle.name}}</td>
-      <td style="padding:20">color : {{vehicle.color}}</td>
-      <td style="padding:20">capacity : {{vehicle.capacity}}</td>
-      <td style="padding:20">description : {{vehicle.description}}</td>
-      <td style="padding:20">pincode : {{vehicle.pincode}}</td>
+      <td style="padding:20">Vehicle: {{vehicle.name}}</td>
+      <td style="padding:20">Color: {{vehicle.color}}</td>
+      <td style="padding:20">Cars Available: {{vehicle.capacity}}</td>
+      <td style="padding:20">Rental price: {{vehicle.description}}</td>
+      <td style="padding:20">Zip code: {{vehicle.pincode}}</td>
       <td style="padding:20"><form action = "/customer_portal/rent/" method="post">
           {% csrf_token %}
           <input type="hidden" name="id" value="{{vehicle.id}}">

@@ -14,9 +14,9 @@
 {% for order in order_list %}
 
   <tr>
-    <td style="padding:20">name : {{order.vehicle.car_name}}</td>
-    <td style="padding:20">rent : {{order.rent}}</td>
-    <td style="padding:20">days : {{order.days}}</td>
+    <td style="padding:20">Name: {{order.vehicle.car_name}}</td>
+    <td style="padding:20">Rent: {{order.rent}}</td>
+    <td style="padding:20">Days: {{order.days}}</td>
     <td style="padding:20"><form action = "/car_dealer_portal/complete/" method="post">
           {% csrf_token %}
           <input type="hidden" name="id" value="{{order.id}}">
